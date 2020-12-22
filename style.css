@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #131313;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ac-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  transform-style: preserve-3d;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1400px) {
+  .ac-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .ac-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .ac-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ac-container .ac-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+
+.ac-container .ac-card-logo {
+  width: 75px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.ac-container .ac-card-type-logo {
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.ac-container .ac-card:hover::before,
+.ac-container .ac-card:hover::after {
+  opacity: 0.04;
+}
+
+.ac-container .ac-card .ac-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.ac-container .ac-card:hover .ac-name {
+  top: 25px;
+  opacity: 1;
+}
+
+.ac-container .ac-card .ac-stats {
+  position: absolute;
+  bottom: 0px;
+  left: 11px;
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  width: 238px;
+  padding: 0px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform-style: preserve-3d;
+  transform: translate3d(0%, 0, 75px);
+  transition: 0.5s;
+}
+
+.ac-container .ac-card .ac-stats-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ac-container .ac-card .ac-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: 0.5s;
+  background: #fff;
+  transform-style: preserve-3d;
+  z-index: 10;
+  opacity: 1;
+  transform: translate3d(-50%, -50%, 74px);
+}
+
+.ac-container .ac-card .ac-assassin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 300px;
+  max-height: 250px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 75px);
+}
+
+.ac-container .ac-card:hover .ac-assassin {
+  transform: translate3d(-50%, -50%, 76px);
+}
+
+.ac-card-common .ac-background,
+.ac-card-common .ac-stats,
+.ac-card-common:hover .ac-unlock-now {
+  background: #e1e8fe !important;
+  color: #333;
+}
+
+.ac-card-rare .ac-background,
+.ac-card-rare .ac-stats,
+.ac-card-rare:hover .ac-unlock-now {
+  background: #24aaa5 !important;
+}
+
+.ac-card-epic .ac-background,
+.ac-card-epic .ac-stats,
+.ac-card-epic:hover .ac-unlock-now {
+  background: #722fa2 !important;
+}
+
+.ac-card-legendary .ac-background,
+.ac-card-legendary .ac-stats,
+.ac-card-legendary:hover .ac-unlock-now {
+  background: #b09165 !important;
+}
